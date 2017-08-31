@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联通网站监控平台</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<div class="box">
+    <div class="header">
+        <h1 class="siteTile" id="backUrlSiteS">
+            <i class="icon-leida"></i>
+            <span>站点监控</span>
+        </h1>
+    </div>
+    <div class="container">
+        <div class="BcrbNavigation">
+            当前位置：
+            <a class="siteList active">错误日志</a>
+            <a class="siteList active" id="totalCl" style="margin-left: 100px; cursor: pointer;">点击异常全部被处理</a>
+            <!--<a class="siteList active">-->
+                <!--<select style="margin-left: 200px;" class="select" id="chooseTime">-->
+                    <!--<option value="24">最近24小时</option>-->
+                    <!--<option value="48">最近48小时</option>-->
+                <!--</select>-->
+            <!--</a>-->
+            <!--<a class="siteList active" id="refresh">刷新</a>-->
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>监控点</th>
+                <th>站点名称</th>
+                <th>站点地址</th>
+                <th>错误次数</th>
+                <th>详情</th>
+            </tr>
+            </thead>
+            <tbody id="renderErrLogs">
+            <tr>
+                <td>口袋铃声</td>
+                <td>http:m.ringbox.cn</td>
+                <td>DNS延时</td>
+                <td>未处理</td>
+                <td>2017-6-13</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript">
+    var sitelist_id = '<%= sitelist_id%>';
+</script>
+<script type="text/javascript" src="/javascripts/session.js"></script>
+<script type="text/javascript" src="/javascripts/moreeerrlogs.js"></script>
+</body>
+</html>

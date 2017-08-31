@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联通网站监控平台</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+</head>
+<body>
+
+<!--错误页面比较-->
+<div class="log_window" id="errhtml" style="width: 100%;display: none" >
+    <div style="text-align: center">
+        <textarea id="err_html_zs" rows="25" cols="40">
+        错误网页
+        </textarea>
+        <textarea id="true_html_zs" rows="25" cols="40">
+        正确网页
+        </textarea>
+        <div id="errtruequxiao" style="text-align: center;font-size: 19px;margin: 5px;color: #e61212">取消</div>
+    </div>
+
+
+</div>
+
+<!--错误页面比较遮罩层弹出-->
+<div class="index_test" id="test_error" style="display: none;"></div>
+
+<div class="box">
+    <div class="header">
+        <h1 class="siteTile" id="backUrlSiteS">
+            <i class="icon-leida"></i>
+            <span>站点监控</span>
+        </h1>
+    </div>
+    <div class="container">
+        <div class="BcrbNavigation">
+            当前位置：
+            <a class="siteList active"><span id="errLogsS">西湖区</span>错误日志</a>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>站点名称</th>
+                <th>站点地址</th>
+                <th>监控点名称</th>
+                <th>错误原因</th>
+                <th>处理状态</th>
+                <th>错误时间</th>
+            </tr>
+            </thead>
+            <tbody id="renderErrLogs">
+            <tr>
+                <td>口袋铃声</td>
+                <td>http:m.ringbox.cn</td>
+                <td>西湖区</td>
+                <td>DNS延时</td>
+                <td>未处理</td>
+                <td>2017-6-13</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript">
+    var logs_monitoring_id = '<%= logs_monitoring_id%>';
+    var sitelist_id = '<%= sitelist_id%>';
+    var monitoring_id_name = '<%= monitoring_id_name%>';
+</script>
+<script type="text/javascript" src="/javascripts/session.js"></script>
+<script type="text/javascript" src="/javascripts/singleerrlogs.js"></script>
+</body>
+</html>

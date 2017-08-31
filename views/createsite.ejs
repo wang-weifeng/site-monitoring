@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联通网站监控平台</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<div class="box">
+    <div class="header">
+        <h1 class="siteTile" id="headerUrlCreate">
+            <i class="icon-leida"></i>
+            <span>站点监控</span>
+        </h1>
+    </div>
+    <div class="container">
+        <div class="BcrbNavigation">
+            当前位置：<a href="javascript:;" class="siteList" id="siteListCreate">站点监控列表</a>
+            > <a href="javascript:;" class="active">创建http监控任务</a>
+        </div>
+        <div class="siction">
+            <button class="created">
+                <span>基本信息</span>
+            </button>
+
+            <div class="infoBox">
+                <div class="inputs-container">
+                    <label for="names" class="labels">任务名称</label>
+                    <input type="text" id="sitelist_name" class="inputs">
+                    <p>以中英文开头，支持中英文，数字，下划线或连接符，最多50个字符</p>
+                </div>
+
+                <div class="inputs-container">
+                    <label for="address" class="address">监测地址</label>
+                    <input type="text" id="sitelist_address" class="inputs">
+                    <p>如：http://www.baidu.com</p>
+                </div>
+                <div class="inputs-container">
+                    <label for="names" class="labels">监控方式</label>
+                    <select id="sitelist_choose">
+                        <option value="http">http</option>
+                    </select>
+                </div>
+                <div class="inputs-container">
+                    <label for="names" class="labels">DNS解析类型</label>
+                    <select id="sitelist_dns">
+                        <option value="1">A</option>
+                        <option value="2">CNAME</option>
+                    </select>
+                </div>
+                <div class="inputs-container">
+                    <label for="address" class="address">DNS解析内容</label>
+                    <input type="text" id="sitelist_ip" class="inputs">
+                    <p>如：t.ringbox.cn.speedtopcdn.com</p>
+                </div>
+                <!---
+                               <div class="inputs-container">
+                                   <label  style="display:inline-block;width:116px;">HTTP请求方式</label>
+                                   <ul class="tabBox">
+                                       <li class="tab active">
+                                           <a href="javascript:;" >GET</a>
+                                       </li>
+                                       <li class="tab">
+                                           <a href="javascript:;">POST</a>
+                                       </li>
+                                   </ul>
+                               </div>
+
+                               <div class="inputs-container">
+                                   <label  style="display:inline-block;width:116px;vertical-align: top;margin-top: 30px;">Cookies</label>
+                                   <textarea class="textarea"></textarea>
+                                   <p style="margin-top:36px;">如：uid=1;name:lisi</p>
+                               </div>
+                               -->
+            </div>
+
+            <button class="created">
+                <span>采集信息</span>
+            </button>
+            <div class="infoBox" style="padding-bottom: 50px;">
+                <div class="inputs-container">
+                    <label  style="display:inline-block;width:116px;">采集频率</label>
+                    <ul class="tabBox" id="cssTimeVal">
+                        <li class="tab active" value="1">
+                            <a href="javascript:;" >5分钟</a>
+                        </li>
+                        <li class="tab" value="5">
+                            <a href="javascript:;">10分钟</a>
+                        </li>
+                        <li class="tab" value="10">
+                            <a href="javascript:;">15分钟</a>
+                        </li>
+                        <li class="tab" value="15">
+                            <a href="javascript:;">20分钟</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="inputs-container">
+                    <label  class="labels">监测点</label>
+                    <div style="display: inline-block" class="checked" id="monitoringList">
+                        <input type="checkbox"><span>南京电信01</span>
+                        <input type="checkbox"><span>南京电信02</span>
+                        <input type="checkbox"><span>上海移动</span>
+                    </div>
+                </div>
+
+                <div class="created-btn">
+                    <button class="created" id="determine">
+                        <span>创建</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/session.js"></script>
+<script type="text/javascript" src="/javascripts/createsite.js"></script>
+</body>
+</html>

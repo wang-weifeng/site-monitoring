@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联通网站监控平台</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/layui.css' />
+    <link rel='stylesheet' href='/stylesheets/laydate.css' />
+</head>
+<body>
+<div class="box">
+    <div class="header">
+        <h1 class="siteTile" id="backSite">
+            <i class="icon-leida"></i>
+            <span>站点监控</span>
+        </h1>
+    </div>
+    <div class="container">
+        <div class="BcrbNavigation">
+            当前位置：<a href="javascript:;" class="siteList" id="backINdex">首页</a>
+            > <a href="javascript:;" class="active" id="currentSiteName1">大王卡</a>
+        </div>
+
+        <div class="sictionBox">
+            <div class="one">
+                <h2>基本信息</h2>
+                <div class="bottom">
+                    <div class="left">
+                        <p>任务名称：<span id="currentSiteName2">大王卡</span></p>
+                        <p>监控对象：<span style=" width: 295px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block;" id="currentSiteAddress">http://m.ringbox.cn</span></p>
+                    </div>
+                    <div class="right">
+                        <p>监控频率：<span id="currentSiteTime">10</span><span>分钟</span></p>
+                        <p>监控类型：<span id="currentSiteChoose">HTTP</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="one">
+                <h2>报警汇总</h2>
+                <div class="bottom bottom2">
+                    <div class="state">
+                        <i class="green"></i>
+                        <span id="normal">0</span><span>项正常</span>
+                    </div>
+                    <div class="state" id="errlogstotal" style="cursor: pointer;">
+                        <i class="orange"></i>
+                        <span id="mistake">0</span><span>项异常</span>
+                    </div>
+                    <div class="state">
+                        <i class="yellow"></i>
+                        <span id="missing">0</span><span>项数据不足</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="siction1">
+            <h2 style="position: relative">
+                <span style="float: left">响应时间及可用性</span>
+                <span class="arrow up"></span>
+            </h2>
+            <div class="siction1-box" id="siteMoringDetails">
+               
+                
+               
+                
+                
+               
+                
+                
+            </div>
+        </div>
+
+        <div class="siction2">
+            <h2>
+                <span style="float: left">监控信息</span>
+                <div class="right">
+                    <div class="layui-inline">
+                        <input  style="height: 32px;" class="layui-input" id="start_time" placeholder="选择开始时间" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+                    </div>
+                    <div class="layui-inline">
+                        <input style="height: 32px;"  class="layui-input" id="end_time" placeholder="选择结束时间" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+                    </div>
+                    <button class="refresh" id="refresh">刷新</button>
+                </div>
+            </h2>
+            <div class="radioBox" id="MSName">
+                
+            </div>
+            <p class="xytime">响应时间</p>
+            <div id="main"></div>
+
+            <p class="xytime">DNS解析时间</p>
+            <div id="main2"></div>
+
+            <p class="xytime">监控报表<button class="right" style="margin: 15px;" type="button" onclick="details.method5('tableExcel')">导出excel</button></p>
+            <div id="myDiv">
+                <table id="tableExcel" width="100%" border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td colspan="9" align="center">监控报表</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="center">监测概况</td>
+                        <td colspan="3" align="center">重点网页监测情况</td>
+                        <td colspan="2" align="center">DNS监测情况</td>
+                    </tr>
+                    <tr>
+                        <td>监控点</td>
+                        <td>发起测试次数</td>
+                        <td>平均响应时间</td>
+                        <td>平均DNS解析时间</td>
+                        <td>网页内容不符次数</td>
+                        <td>网页内容不符原因分析</td>
+                        <td>网页报警高峰时段</td>
+                        <td>dns劫持次数</td>
+                        <td>dns劫持高峰时段</td>
+                    </tr>
+                    <tr>
+                        <td>aaa</td>
+                        <td>bbb</td>
+                        <td>ccc</td>
+                        <td>ddd</td>
+                        <td>eee</td>
+                        <td>aaa</td>
+                        <td>bbb</td>
+                        <td>ccc</td>
+                        <td>eee</td>
+                    </tr>
+                    <tr>
+                        <td>AAA</td>
+                        <td>BBB</td>
+                        <td>CCC</td>
+                        <td>DDD</td>
+                        <td>EEE</td>
+                        <td>AAA</td>
+                        <td>BBB</td>
+                        <td>CCC</td>
+                        <td>EEE</td>
+                    </tr>
+                    <tr>
+                        <td>FFF</td>
+                        <td>GGG</td>
+                        <td>HHH</td>
+                        <td>III</td>
+                        <td>JJJ</td>
+                        <td>FFF</td>
+                        <td>GGG</td>
+                        <td>HHH</td>
+                        <td>JJJ</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/echarts.js"></script>
+<script src="/javascripts/jquery.js"></script>
+<script type="text/javascript">
+    var sitelist_id = '<%= sitelist_id%>';
+</script>
+<script type="text/javascript" src="/javascripts/layui.js"></script>
+<script type="text/javascript" src="/javascripts/laydate.js"></script>
+<script type="text/javascript" src="/javascripts/session.js"></script>
+<script src="/javascripts/details.js"></script>
+</body>
+</html>
